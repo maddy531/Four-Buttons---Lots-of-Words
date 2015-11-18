@@ -1,1 +1,10 @@
-.list
+.list span{
+
+  padding: 2em;
+}
+
+.red{
+  background-color: red;
+  color: white;
+
+}
