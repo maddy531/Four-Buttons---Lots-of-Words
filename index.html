@@ -16,13 +16,14 @@
   <header><h1>{{heading}}<h1></header>
     <button class="btn btn-primary btn-lg" ng-click="talk()"> Talk! </button>
 
-  <!-- <button class="btn btn-primary btn-lg" ng-click="addUndecorWord()"> Words </button>
-  <button class="btn btn-primary btn-lg" ng-click="addDecorWord()"> Words with decorations</button>
-  <button class="btn btn-primary btn-lg"> More words</button>
-  <button class="btn btn-primary btn-lg"> More words with decorations</button> -->
+  <!-- <button class="btn btn-primary btn-lg" ng-click="addUndecorWord"> Words </button> -->
+  <!-- <button class="btn btn-primary btn-lg" ng-click="addDecorWord"> Words with decorations</button>
+  <button class="btn btn-primary btn-lg" ng-click="addPhrases"> Phrases</button>
+  <button class="btn btn-primary btn-lg" addPhrases="addPhrasesDecor"> More words with decorations</button> -->
 
   <div class="list-of-words">
   <span ng-repeat="element in wordsOnPage track by $index" class="ng-class : {{element.decor}}">{{element.word}}</span>
+  <span ng-repeat="phrase in wordsOnPage track by $index" class="ng-class : {{phrase.decor}}" >{{phrase.phrase}}</span>
 
   </div>
 </div>
