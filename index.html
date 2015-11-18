@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<title></title>
+</head>
+<body ng-app="myMod">
+
+
+
+<div class="container" ng-controller="myCtrl">
+  <header><h1>Our words<h1></header>
+
+  <button class="btn btn-primary btn-lg" ng-click="addWord()"> Words </button>
+  <button class="btn btn-primary btn-lg"> Words with decorations</button>
+  <button class="btn btn-primary btn-lg"> More words</button>
+  <button class="btn btn-primary btn-lg"> More words with decorations</button>
+
+  <div class="list-of-words">
+  <span ng-repeat="word in wordsOnPage track by $index">{{word}}</span>
+
+    {{1 +1 }}
+
+  </div>
+</div>
+
+
+<script></script>
+</body>
+  <script src="script.js"></script>
+
+</html>
