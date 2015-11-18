@@ -1,5 +1,5 @@
 angular.module("myMod",[])
-  .controller("myCtrl", function($scope){
+  .controller("myCtrl", function($scope, $interval){
 
     $scope.heading = 'Silly Words';
 
@@ -11,21 +11,42 @@ angular.module("myMod",[])
     'Words ',
     'Oops '
     ];
+
+    $scope.randomClass=[
+      'red ',
+      'blue ',
+      'size ',
+      'newfont ',
+      'underline ',
+      'spin '
+    ];
+
+
+
     $scope.wordsOnPage = [];
 
-    $scope.addUndecorWord = function (){
+    $scope.talk = function(){
+      var mixFuncs = [addDecorWord, addUndecorWord];
+      function rando (){
+         return mixFuncs[Math.floor(Math.random()*mixFuncs.length)];
+       };
+
+        $interval(rando(), 500, 10);
+    }
+
+     function addUndecorWord (){
       var newElement = {};
       newElement.word =  $scope.randomWords[Math.floor(Math.random()* $scope.randomWords.length)];
       newElement.decor = '';
       $scope.wordsOnPage.push(newElement);
-
     }
-
-    $scope.addDecorWord = function(){
+     function addDecorWord(){
       var newElement = {};
       newElement.word =  $scope.randomWords[Math.floor(Math.random()* $scope.randomWords.length)];
-      newElement.decor = 'red';
+      newElement.decor = $scope.randomClass[Math.floor(Math.random()* $scope.randomClass.length)];
       $scope.wordsOnPage.push(newElement);
     }
+
+    $interval
 
   });
